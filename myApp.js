@@ -1,4 +1,5 @@
 var express = require('express');
+const Process = require("process");
 var app = express();
 
 console.log(__dirname + "/public/style.css");
@@ -8,9 +9,14 @@ app.get("/",function(req, res) {
  res.sendFile(__dirname + "/views/index.html");
 })
 app.get("/json", (req, res) => {
- res.json({
-  message: "Hello json"
- });
+
+     if (Process.env.MESSAGE_STYLE == "uppercase "){
+      res.json({message: "HELLO JSON"});
+     }else {
+      res.json({message: "Hello json"});
+     }
+
+
 });
 
 
