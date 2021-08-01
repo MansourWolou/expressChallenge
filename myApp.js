@@ -7,13 +7,11 @@ app.use("/public", express.static(__dirname + "/public"));
 app.get("/",function(req, res) {
  res.sendFile(__dirname + "/views/index.html");
 })
-app.get("/now",(req,res,next)=>{
-    req.time = new Date().toString()
-        next();
-},(req,res)=>{
+app.get("/:word/echo",(req,res,next)=>{
+    console.log(req.params)
     res.json(
         {
-            time: req.time
+            echo: req.params.word
         }
     )
 })
