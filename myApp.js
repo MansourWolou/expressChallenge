@@ -8,6 +8,7 @@ app.use("/public", express.static(__dirname + "/public"));
 /*app.get("/",function(req, res) {
  res.sendFile(__dirname + "/views/index.html");
 })*/
+// don't know why it is not working.
 app.get("/", (req, res) => {
     var reponse;
     if (process.env.MESSAGE_STYLE === "uppercase") {
