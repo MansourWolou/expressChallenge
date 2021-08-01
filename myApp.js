@@ -5,9 +5,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 //app.use(express.static(__dirname + "/public"));
 app.use("/public", express.static(__dirname + "/public"));
-app.get("/",function(req, res) {
+/*app.get("/",function(req, res) {
  res.sendFile(__dirname + "/views/index.html");
-})
+})*/
 app.get("/", (req, res) => {
     var reponse;
     if (process.env.MESSAGE_STYLE === "uppercase") {
