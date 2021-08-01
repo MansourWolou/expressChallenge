@@ -3,7 +3,7 @@ const Process = require("process");
 var app = express();
 const dotenv = require('dotenv');
 dotenv.config();
-const  msg = `${Process.env.MESSAGE_STYLE}`;
+const  msg = Process.env.MESSAGE_STYLE;
 
 
 console.log( msg);
@@ -23,24 +23,4 @@ app.get("/json", (req, res) => {
 res.json(rslt)
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
